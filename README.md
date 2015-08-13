@@ -30,18 +30,27 @@ To run the specs for a directory, you need to go into that directory and run the
 ```
 $ cd 00_hello
 $ testem
+$ testem --host $IP -p $PORT
 TEST'EM 'SCRIPTS!
 Open the URL below in a browser to connect.
 http://localhost:7357/
 ```
 
-Now, if you open http://localhost:7357 in a browser (we recommend Chrome) you should see the Jasmine Spec runner. The Testem is booting up a small web server, which loads in all the JS files in that directory and brings in Jasmine. Remember, Jasmine is just JavaScript, so it all runs inside the browser.
+Now, if you open http://localhost:7357 in a browser (we recommend Chrome) you 
+should see the Jasmine Spec runner. The Testem is booting up a small web server, 
+which loads in all the JS files in that directory and brings in Jasmine. Remember, 
+Jasmine is just JavaScript, so it all runs inside the browser.
 
-To add your script (the code you need to write), create a file with the same name as the spec file but without the word `spec`. For example, to create the functions that `helloSpec.js` needs to pass the test, create a `hello.js` file. This works because Jasmine loads all the files in lexigraphical (alphabetical) order, so `hello.js`comes before `helloSpec.js`.
+To add your script (the code you need to write), create a file with the same 
+name as the spec file but without the word `spec`. For example, to create the 
+functions that `helloSpec.js` needs to pass the test, create a `hello.js` file. 
+This works because Jasmine loads all the files in lexigraphical (alphabetical), 
+so `hello.js`comes before `helloSpec.js`.
 
 ## Debugging Methods
 
-The key skill here to practice is debugging JavaScript inside Chrome. You should become comfortable with these methods:
+The key skill here to practice is debugging JavaScript inside Chrome. 
+You should become comfortable with these methods:
 
 1.  Using the `console` via `console.log` and `debugger`
 2.  Stepping through your JS in the Console and evaluating variables
