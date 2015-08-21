@@ -1,14 +1,15 @@
 function createCalculator (num) {
   var calcObj = {};
-  var amount = 0
+  calcObj.amount = 0
+  
   calcObj.value = function () {
-    return amount;
+    return this.amount;
   };
   calcObj.add = function (num) {
-    amount = amount + num;
+    this.amount += num;
   };
   calcObj.subtract = function (num) {
-    amount = amount - num;
+    this.amount -= num;
   };
   return calcObj;
 };
