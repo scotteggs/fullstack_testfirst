@@ -53,3 +53,39 @@ function largestTriplet(num){
     }
     return [a,b,c];
 }
+
+
+function join (arr, delim) {
+    var str = "";
+    for (i=0; i<arr.length; i++) {
+        if(typeof delim == 'undefined'){
+           str += arr[i]; 
+        } else {
+            if(i<arr.length-1){
+                str += arr[i]+delim;
+            } else {
+                str += arr[i];
+            }
+        }
+    }
+    return str;
+}
+
+
+function paramify (obj) {
+    str = "";
+    count = 1;
+    
+    var keys = Object.keys(obj);
+    keys.sort();
+    
+    for (var i = 0; i < keys.length; i++) {
+        if (count < Object.keys(obj).length) {
+            str += keys[i] + "=" + obj[keys[i]] + "&";
+        } else {
+            str += keys[i] + "=" + obj[keys[i]];
+        }
+        count ++;
+    }
+    return str;
+}
