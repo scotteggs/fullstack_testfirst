@@ -6,3 +6,17 @@ function concat_string () {
 	return arr.join("");
 	
 }// Functions.js
+
+
+function yourFunctionRunner (){
+	var str = "";
+	for (var i = 0; i < arguments.length; i++) {
+		str += arguments[i]();
+	}
+	return str;
+}
+
+
+function makeAdder(num) {
+	
+}
