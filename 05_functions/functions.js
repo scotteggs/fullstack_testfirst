@@ -18,7 +18,27 @@ function yourFunctionRunner (){
 
 
 var makeAdder = function (num1) {
+	// var num1 = 2
     return function (num2){
         return (num1 + num2);
     };
 };
+
+
+
+var once = function(func) {
+	var hasRan = false;
+	return function(){
+		if (hasRan == false) {
+			func();
+			hasRan = true;
+		} 
+	}
+}
+
+
+var hasRan = true
+if(hasRan){
+	someFunction();
+	hasRan = false;
+}
