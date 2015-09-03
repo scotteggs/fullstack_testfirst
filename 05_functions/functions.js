@@ -37,8 +37,22 @@ var once = function(func) {
 }
 
 
-var hasRan = true
-if(hasRan){
-	someFunction();
-	hasRan = false;
-}
+var createObjectWithTwoClosures = function (){
+    num = 0;
+    var object = {};
+    
+    object.oneIncrementer = function (){
+        num += 1;
+    };
+    
+    object.tensIncrementer = function() {
+        num += 10;
+    };
+    
+    object.getValue = function () {
+        return num;
+    };
+    return object;
+
+};
+
