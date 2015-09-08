@@ -51,3 +51,62 @@ var countWords = function(str){
 	}
 	return count;
 };
+
+var reduce = function (arr, start, func){
+	var value = start;
+	for (var i = 0; i < arr.length; i++){
+		value = func(value, arr[i]);
+	} 
+	return value;
+};
+
+
+var countWordsInReduce = function(a,b){
+	return a + countWords(b);
+};
+
+
+var sum = function (arr){
+	return reduce(arr, 0, function(a,b) {
+		return a + b;
+	});
+};
+
+
+
+var every = function (arr,func){
+	var sensor = true;
+	for (var i = 0; i < arr.length; i ++ ){
+		if (func(arr[i])===false){
+			sensor = false;
+		}
+	}
+	return sensor;
+};
+
+
+var any = function (arr, func) {
+	var sensor = false; 
+	for (var i = 0; i < arr.length; i ++) {
+		if ( func(arr[i])===true) {
+			sensor = true;
+		}
+	}
+	return sensor; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
