@@ -29,6 +29,34 @@ var fib = function (num){
 };
 
 var type = function(value) {
-	var output = toString.call(value)
+	var output = Object.prototype.toString.call(value);
     return output.substring(8,output.length-1);
+};
+
+
+var stringify = function (value) {
+	//valuetype = type(value);	
+		
+		if(type(value) == 'Array'){
+			var arr = [];
+
+			for (var i = 0;  i < value.length; i++) {
+				arr.push(stringify(value[i]));
+			}
+			return "["+arr.join(",")+"]";
+
+		} else if(type(value) == 'Object') { 
+    		var arr = [];
+
+    		for (var key in value) {
+        		arr.push('"'+key+'": '+stringify(value[key]));
+    		}
+    		return "{"+arr.join(",")+"}";
+
+		} else if(type(value) == 'String') {
+		    return '"'+String(value)+'"';
+		} else {
+		    return String(value);
+		}
+	// possibly refactor if/else
 };
